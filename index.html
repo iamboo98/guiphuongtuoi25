@@ -207,31 +207,32 @@ h2{font-family:var(--font-display); font-weight:400; font-size:var(--step-3); li
 .letter p{max-width:60ch; font-weight:400; margin-bottom:12px}
 .letter .sign{font-family:var(--font-hand); font-size:1.7rem; color:#7e2414; margin-top:10px; line-height:1.2}
 
-/* ---------- Gallery ---------- */
-.gallery{display:grid; grid-template-columns:1fr 1fr; gap:14px 12px}
-.ph{margin:0; display:flex; flex-direction:column; gap:8px}
-.ph.wide{grid-column:1/-1}
-.ph img{width:100%; height:auto; display:block; aspect-ratio:3/4; object-fit:cover; border-radius:6px; border:1px solid var(--line); background:var(--lacquer-raised)}
-.ph.landscape img{aspect-ratio:887/517}
-.ph.tall img{aspect-ratio:4/5; object-position:50% 42%}
-.ph figcaption, .reel figcaption{font-family:var(--font-display); font-style:italic; font-size:1rem; line-height:1.35; color:var(--muted)}
+/* ---------- Journey timeline ---------- */
+.journey{list-style:none; margin:6px 0 0; padding:0 0 0 26px; position:relative; display:flex; flex-direction:column; gap:34px}
+.journey::before{content:""; position:absolute; left:6px; top:8px; bottom:8px; width:1px; background:linear-gradient(var(--gold), rgba(214,164,70,.15))}
+.chapter{position:relative; display:flex; flex-direction:column; gap:12px}
+.chapter::before{content:""; position:absolute; left:-25px; top:6px; width:11px; height:11px; border-radius:50%; background:var(--lacquer); border:1px solid var(--gold); box-shadow:0 0 0 3px var(--lacquer)}
+.chapter:last-child::before{background:var(--gold-hi); border-color:var(--gold-hi); box-shadow:0 0 0 3px var(--lacquer), 0 0 14px rgba(244,215,143,.7)}
+.chapter .when{font-size:.78rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--gold)}
+.chapter .photo{margin:0; width:min(100%,340px); aspect-ratio:4/5; overflow:hidden; border-radius:4px; border:1px solid var(--gold);
+  box-shadow:0 0 0 6px var(--lacquer), 0 0 0 7px var(--line), 0 18px 40px rgba(0,0,0,.45); background:var(--lacquer-raised)}
+.chapter .photo img{width:100%; height:100%; display:block; object-fit:cover}
+.chapter .line{font-family:var(--font-display); font-style:italic; font-size:var(--step-1); line-height:1.4; color:var(--eggshell); max-width:34ch; text-wrap:balance}
 
-/* ---------- Reels ---------- */
-.reels{
-  display:grid; grid-auto-flow:column; grid-auto-columns:min(66%,250px); gap:12px;
-  overflow-x:auto; scroll-snap-type:x mandatory; margin:0 -20px; padding:0 20px 8px; scroll-padding-inline:20px;
-  scrollbar-width:none;
-}
-.reels::-webkit-scrollbar{display:none}
-.reel{margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:8px}
-.frame{position:relative; aspect-ratio:9/16; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#000; cursor:pointer}
-.frame video{width:100%; height:100%; display:block; object-fit:cover}
-.snd{
-  position:absolute; left:10px; bottom:10px; border:1px solid rgba(244,215,143,.6); background:rgba(23,10,8,.72);
-  color:var(--gold-hi); border-radius:999px; padding:6px 12px; font-size:.8rem; font-weight:500; cursor:pointer;
-  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
-}
-.frame.on .snd{background:var(--gold); color:var(--lacquer); border-color:transparent}
+/* ---------- Story player ---------- */
+.story{position:relative; width:min(78%,320px); aspect-ratio:9/16; border-radius:18px; overflow:hidden; border:1px solid var(--gold);
+  box-shadow:0 0 0 7px var(--lacquer), 0 0 0 8px var(--line), 0 24px 50px rgba(0,0,0,.5); background:#000; margin:6px 0 4px 8px}
+.story video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .35s}
+.story video.active{opacity:1}
+.bars{position:absolute; top:10px; left:10px; right:10px; display:flex; gap:4px; z-index:3; pointer-events:none}
+.bars span{flex:1; height:3px; border-radius:2px; background:rgba(239,229,207,.35); overflow:hidden}
+.bars i{display:block; height:100%; width:0; background:var(--gold-hi); transition:width .25s linear}
+.nav{position:absolute; top:0; bottom:0; width:38%; background:none; border:0; padding:0; z-index:2; cursor:pointer}
+.nav.prev{left:0} .nav.next{right:0}
+.snd{position:absolute; left:12px; bottom:12px; z-index:3; border:1px solid rgba(244,215,143,.6); background:rgba(23,10,8,.72);
+  color:var(--gold-hi); border-radius:999px; padding:7px 14px; font-size:.82rem; font-weight:500; cursor:pointer;
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px)}
+.story.on .snd{background:var(--gold); color:var(--lacquer); border-color:transparent}
 
 footer{padding:28px 0 44px; color:var(--muted); font-size:.85rem}
 footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:var(--gold); font-variant-numeric:tabular-nums}
@@ -240,7 +241,10 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
 
 @media (min-width:640px){
   .hero{padding-top:64px}
-  .reels{grid-auto-flow:row; grid-template-columns:repeat(3,1fr); overflow:visible; margin:0; padding:0}
+  .chapter{display:grid; grid-template-columns:300px 1fr; grid-template-rows:auto 1fr; column-gap:24px; row-gap:10px; align-items:start}
+  .chapter .photo{grid-row:1 / span 2; grid-column:1}
+  .chapter .when{grid-column:2; padding-top:4px}
+  .chapter .line{grid-column:2}
   .names{grid-template-columns:1fr 1fr}
   .letter{padding:40px 44px 36px}
 }
@@ -269,6 +273,78 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
 </header>
 
 <svg class="inlay" data-inlay="1" aria-hidden="true"></svg>
+
+<section id="ngay-sinh" aria-labelledby="h-sinh">
+  <div class="wrap">
+    <p class="eyebrow">14.11.2001</p>
+    <h2 id="h-sinh">Ngày Phượng chào đời</h2>
+    <div class="facts">
+      <div class="fact"><p class="v">18:30, thứ Tư</p><p class="l">14 tháng 11 năm 2001</p><p class="n">Giờ Dậu, lúc phố đã lên đèn trong những ngày chớm đông.</p></div>
+      <div class="fact"><p class="v">29 tháng Chín</p><p class="l">Âm lịch, năm Tân Tỵ</p><p class="n">Ngày cuối của tháng Chín âm. Hôm sau đã là mùng 1 tháng Mười.</p></div>
+      <div class="fact"><p class="v">Bạch Lạp Kim</p><p class="l">Mệnh của người Tân Tỵ</p><p class="n">Nghĩa là vàng trong sáp nến, hợp với hai cây nến đang chờ Phượng thổi.</p></div>
+      <div class="fact"><p class="v">Bọ Cạp</p><p class="l">Cung hoàng đạo (Thiên Yết)</p><p class="n">Cung của những người sâu sắc, bền bỉ và giữ lời.</p></div>
+      <div class="fact"><p class="v">Cúc &amp; hoàng ngọc</p><p class="l">Hoa và đá của tháng 11</p><p class="n">Hai sắc vàng, cũng là màu của trang này.</p></div>
+      <div class="fact"><p class="v">Hai lần</p><p class="l">Sinh nhật trong tháng 11 năm nay</p><p class="n">Sinh nhật âm lịch rơi vào thứ Bảy 7/11, đúng một tuần trước sinh nhật dương lịch.</p></div>
+    </div>
+    <div class="alive">
+      <p class="alive-head">Một bông hoa nhỏ đã vững vàng</p>
+      <p><span class="secs gold" id="alive-secs">788.918.400</span> <span class="unit">giây</span></p>
+      <p class="unit" id="alive-break"></p>
+      <p class="n">Tính từ 18 giờ 30 ngày 14/11/2001. Đúng 18 giờ 30 ngày 14/11/2026, con số này chạm mốc 788.918.400 giây, tức tròn 9.131 ngày.</p>
+      <p class="thanks">Cảm ơn vì Phượng đã có mặt trên đời.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="inlay" data-inlay="2" aria-hidden="true"></svg>
+
+<section id="hanh-trinh" aria-labelledby="h-hanh-trinh">
+  <div class="wrap">
+    <p class="eyebrow">Hành trình</p>
+    <h2 id="h-hanh-trinh">Từ ngày ấy đến hôm nay</h2>
+    <ol class="journey">
+      <li class="chapter">
+        <p class="when">Ngày ấy</p>
+        <figure class="photo"><img src="img/ngay-ay.jpg" alt="Phượng ngày còn đeo kính tròn" width="887" height="517" loading="lazy" style="object-position:52% 40%"></figure>
+        <p class="line">Cô gái nhỏ với đôi mắt biết cười, lặng lẽ ươm những giấc mơ thật lớn.</p>
+      </li>
+      <li class="chapter">
+        <p class="when">Những ngày tất bật</p>
+        <figure class="photo"><img src="img/dong-hang.jpg" alt="Phượng giữa những kiện hàng" width="1200" height="1600" loading="lazy" style="object-position:50% 30%"></figure>
+        <p class="line">Bao nỗ lực lặng thầm hôm nay, mai này sẽ nở thành trái ngọt.</p>
+      </li>
+      <li class="chapter">
+        <p class="when">Trên mọi nẻo đường</p>
+        <figure class="photo"><img src="img/cung-duong.jpg" alt="Phượng trên đường phố" width="1200" height="1600" loading="lazy" style="object-position:50% 55%"></figure>
+        <p class="line">Qua bao nắng gió đường xa, nụ cười ấy vẫn vẹn nguyên như thuở ban đầu.</p>
+      </li>
+      <li class="chapter">
+        <p class="when">Hôm nay</p>
+        <figure class="photo"><img src="img/hom-nay.jpg" alt="Phượng tươi cười" width="1100" height="1955" loading="lazy" style="object-position:50% 45%"></figure>
+        <p class="line">Hai mươi lăm xuân xanh, rạng ngời và vững vàng bước vào chương mới.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="thuoc-phim" aria-labelledby="h-phim">
+  <div class="wrap">
+    <p class="eyebrow">Thước phim</p>
+    <h2 id="h-phim">Những khoảnh khắc biết cười</h2>
+    <div class="story" id="story" role="group" aria-label="Ba video của Phượng">
+      <div class="bars" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+      <video src="video/phuong-1.mp4" poster="video/phuong-1.jpg" muted playsinline preload="auto" aria-label="Video thứ nhất"></video>
+      <video src="video/phuong-2.mp4" poster="video/phuong-2.jpg" muted playsinline preload="metadata" aria-label="Video thứ hai"></video>
+      <video src="video/phuong-3.mp4" poster="video/phuong-3.jpg" muted playsinline preload="metadata" aria-label="Video thứ ba"></video>
+      <button class="nav prev" type="button" aria-label="Video trước"></button>
+      <button class="nav next" type="button" aria-label="Video sau"></button>
+      <button class="snd" type="button">Bật tiếng</button>
+    </div>
+    <p class="sub">Chạm hai bên khung hình để chuyển video.</p>
+  </div>
+</section>
+
+<svg class="inlay" data-inlay="3" aria-hidden="true"></svg>
 
 <section id="thoi-nen" aria-labelledby="h-nen">
   <div class="wrap">
@@ -303,7 +379,7 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
   </div>
 </section>
 
-<svg class="inlay" data-inlay="2" aria-hidden="true"></svg>
+<svg class="inlay" data-inlay="4" aria-hidden="true"></svg>
 
 <section id="loi-chuc" aria-labelledby="h-chuc">
   <div class="wrap">
@@ -322,58 +398,6 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
 </section>
 
 <svg class="inlay" data-inlay="5" aria-hidden="true"></svg>
-
-<section id="khoanh-khac" aria-labelledby="h-anh">
-  <div class="wrap">
-    <p class="eyebrow">Khoảnh khắc</p>
-    <h2 id="h-anh">Phượng qua từng khung hình</h2>
-    <div class="gallery">
-      <figure class="ph wide landscape"><img src="img/ngay-ay.jpg" alt="Phượng đeo kính tròn, mặc áo len hoạ tiết, tay cầm hộp sữa" width="887" height="517" loading="lazy"><figcaption>Ngày ấy: tóc ngang vai, kính tròn và một hộp sữa tươi trên tay.</figcaption></figure>
-      <figure class="ph"><img src="img/dong-hang.jpg" alt="Phượng ngồi giữa kho hàng, mặc áo phông chữ time for sleep" width="1200" height="1600" loading="lazy"><figcaption>Những ngày đóng hàng: áo bảo đi ngủ, tay vẫn gói đơn.</figcaption></figure>
-      <figure class="ph"><img src="img/cung-duong.jpg" alt="Phượng đội mũ bảo hiểm, chụp ảnh trên phố" width="1200" height="1600" loading="lazy"><figcaption>Trên những cung đường quen, nụ cười chưa bao giờ tắt.</figcaption></figure>
-      <figure class="ph wide tall"><img src="img/hom-nay.jpg" alt="Phượng cười, giơ tay chữ V" width="1100" height="1955" loading="lazy"><figcaption>Và Phượng của hôm nay, rạng rỡ bước vào tuổi 25.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="thuoc-phim" aria-labelledby="h-phim">
-  <div class="wrap">
-    <p class="eyebrow">Thước phim nhỏ</p>
-    <h2 id="h-phim">Vài giây đáng yêu của Phượng</h2>
-    <p class="sub">Chạm vào video để bật hoặc tắt tiếng.</p>
-    <div class="reels">
-      <figure class="reel"><div class="frame"><video src="video/phuong-1.mp4" poster="video/phuong-1.jpg" muted loop playsinline preload="metadata" aria-label="Video Phượng đội mũ hồng"></video><button class="snd" type="button">Bật tiếng</button></div><figcaption>Mũ hồng, kính to và một chút tinh nghịch.</figcaption></figure>
-      <figure class="reel"><div class="frame"><video src="video/phuong-2.mp4" poster="video/phuong-2.jpg" muted loop playsinline preload="metadata" aria-label="Video Phượng mặc áo sơ mi trắng"></video><button class="snd" type="button">Bật tiếng</button></div><figcaption>Một buổi chiều dịu dàng như câu hát.</figcaption></figure>
-      <figure class="reel"><div class="frame"><video src="video/phuong-3.mp4" poster="video/phuong-3.jpg" muted loop playsinline preload="metadata" aria-label="Video Phượng đeo kính đỏ"></video><button class="snd" type="button">Bật tiếng</button></div><figcaption>Kính đỏ, kẹp tóc xinh xinh.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<svg class="inlay" data-inlay="3" aria-hidden="true"></svg>
-
-<section id="ngay-sinh" aria-labelledby="h-sinh">
-  <div class="wrap">
-    <p class="eyebrow">14.11.2001</p>
-    <h2 id="h-sinh">Ngày Phượng chào đời</h2>
-    <div class="facts">
-      <div class="fact"><p class="v">18:30, thứ Tư</p><p class="l">14 tháng 11 năm 2001</p><p class="n">Giờ Dậu, lúc phố đã lên đèn trong những ngày chớm đông.</p></div>
-      <div class="fact"><p class="v">29 tháng Chín</p><p class="l">Âm lịch, năm Tân Tỵ</p><p class="n">Ngày cuối của tháng Chín âm. Hôm sau đã là mùng 1 tháng Mười.</p></div>
-      <div class="fact"><p class="v">Bạch Lạp Kim</p><p class="l">Mệnh của người Tân Tỵ</p><p class="n">Nghĩa là vàng trong sáp nến. Rất hợp với hai cây nến ở trên.</p></div>
-      <div class="fact"><p class="v">Bọ Cạp</p><p class="l">Cung hoàng đạo (Thiên Yết)</p><p class="n">Cung của những người sâu sắc, bền bỉ và giữ lời.</p></div>
-      <div class="fact"><p class="v">Cúc &amp; hoàng ngọc</p><p class="l">Hoa và đá của tháng 11</p><p class="n">Hai sắc vàng, cũng là màu của trang này.</p></div>
-      <div class="fact"><p class="v">Hai lần</p><p class="l">Sinh nhật trong tháng 11 năm nay</p><p class="n">Sinh nhật âm lịch rơi vào thứ Bảy 7/11, đúng một tuần trước sinh nhật dương lịch.</p></div>
-    </div>
-    <div class="alive">
-      <p class="alive-head">Một bông hoa nhỏ đã vững vàng</p>
-      <p><span class="secs gold" id="alive-secs">788.918.400</span> <span class="unit">giây</span></p>
-      <p class="unit" id="alive-break"></p>
-      <p class="n">Tính từ 18 giờ 30 ngày 14/11/2001. Đúng 18 giờ 30 ngày 14/11/2026, con số này chạm mốc 788.918.400 giây, tức tròn 9.131 ngày.</p>
-      <p class="thanks">Cảm ơn vì Phượng đã có mặt trên đời.</p>
-    </div>
-  </div>
-</section>
-
-<svg class="inlay" data-inlay="4" aria-hidden="true"></svg>
 
 <section id="ten" aria-labelledby="h-ten">
   <div class="wrap">
@@ -599,34 +623,43 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
   });
   renderWishes();
 
-  /* ---------- Reels ---------- */
-  var frames = Array.prototype.slice.call(document.querySelectorAll(".frame"));
-  function setSound(fr, on){
-    var v = fr.querySelector("video"), b = fr.querySelector(".snd");
-    v.muted = !on; fr.classList.toggle("on", on);
-    b.textContent = on ? "Tắt tiếng" : "Bật tiếng";
-  }
-  frames.forEach(function(fr){
-    var v = fr.querySelector("video");
-    if (reduce) v.controls = true;
-    fr.addEventListener("click", function(e){
-      if (reduce && e.target === v) return;
-      var turnOn = v.muted;
-      frames.forEach(function(o){ if (o !== fr) setSound(o, false); });
-      setSound(fr, turnOn);
-      if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+  /* ---------- Story player ---------- */
+  var story = document.getElementById("story");
+  var vids = Array.prototype.slice.call(story.querySelectorAll("video"));
+  var bars = Array.prototype.slice.call(story.querySelectorAll(".bars i"));
+  var sndBtn = story.querySelector(".snd");
+  var cur = 0, soundOn = false, inView = false, started = !reduce;
+  function playCur(){ var p = vids[cur].play(); if (p && p.catch) p.catch(function(){}); }
+  function show(i){
+    cur = (i + vids.length) % vids.length;
+    vids.forEach(function(v, k){
+      v.classList.toggle("active", k === cur);
+      if (k !== cur) { v.pause(); try { v.currentTime = 0; } catch(e){} }
+      bars[k].style.width = k < cur ? "100%" : "0%";
     });
-  });
-  if (!reduce && "IntersectionObserver" in window) {
-    var vio = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        var v = en.target;
-        if (en.isIntersecting && en.intersectionRatio >= 0.5) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
-        else v.pause();
-      });
-    }, { threshold: [0, 0.5, 1] });
-    frames.forEach(function(fr){ vio.observe(fr.querySelector("video")); });
+    vids[cur].muted = !soundOn;
+    if (started && inView) playCur();
   }
+  vids.forEach(function(v, k){
+    v.addEventListener("ended", function(){ if (k === cur) show(cur + 1); });
+    v.addEventListener("timeupdate", function(){ if (k === cur && v.duration) bars[k].style.width = (v.currentTime / v.duration * 100) + "%"; });
+  });
+  story.querySelector(".prev").addEventListener("click", function(){ started = true; show(cur - 1); });
+  story.querySelector(".next").addEventListener("click", function(){ started = true; show(cur + 1); });
+  sndBtn.addEventListener("click", function(){
+    started = true; soundOn = !soundOn;
+    vids[cur].muted = !soundOn;
+    story.classList.toggle("on", soundOn);
+    sndBtn.textContent = soundOn ? "Tắt tiếng" : "Bật tiếng";
+    playCur();
+  });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(en){
+      inView = en[0].isIntersecting && en[0].intersectionRatio >= 0.5;
+      if (inView && started) playCur(); else vids[cur].pause();
+    }, { threshold: [0, 0.5, 1] }).observe(story);
+  } else { inView = true; }
+  show(0);
 
   /* ---------- Embers (hero) ---------- */
   var ec = document.getElementById("embers"), ex = ec.getContext("2d");
