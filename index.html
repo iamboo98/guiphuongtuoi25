@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sinh nhật 25 của Minh Phượng</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Charm:wght@400;700&family=Noto+Serif+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* Sơn mài: nền then đỏ thẫm, chữ vàng lá, khảm vỏ trứng. Một cột đọc dọc, lệch trái, số 25 tràn mép phải. */
+:root{
+  --lacquer:#170a08;
+  --lacquer-raised:#251109;
+  --vermilion:#c23a20;
+  --gold:#d6a446;
+  --gold-hi:#f4d78f;
+  --eggshell:#efe5cf;
+  --muted:#b79d84;
+  --line:rgba(214,164,70,.26);
+  --font-display:"Noto Serif Display","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --font-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-hand:"Charm","Noto Serif Display",Georgia,cursive;
+  --step-0:1rem; --step-1:1.25rem; --step-2:1.6rem; --step-3:2.2rem; --step-4:3.2rem;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--lacquer); color:var(--eggshell);
+  font-family:var(--font-body); font-size:var(--step-0); line-height:1.6; font-weight:300;
+  background-image:
+    radial-gradient(110% 55% at 95% 0%, rgba(194,58,32,.28), transparent 60%),
+    radial-gradient(80% 40% at 0% 45%, rgba(194,58,32,.12), transparent 70%),
+    radial-gradient(90% 50% at 100% 100%, rgba(214,164,70,.08), transparent 70%);
+  overflow-x:hidden;
+}
+h1,h2,h3{text-wrap:balance; margin:0}
+p{margin:0}
+button{font:inherit; color:inherit}
+:focus-visible{outline:2px solid var(--gold-hi); outline-offset:3px; border-radius:6px}
+
+.wrap{width:100%; max-width:720px; margin:0 auto; padding:0 20px}
+.eyebrow{
+  font-family:var(--font-body); font-size:.78rem; font-weight:500; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold);
+}
+.gold{
+  background:linear-gradient(100deg,#8f6020 0%,#e2b65c 14%,#fff1c2 24%,#d6a446 36%,#9c6c25 50%,#f4d78f 66%,#b8862f 82%,#f8e3a8 94%);
+  background-size:220% 100%; background-position:0% 50%;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:leaf 9s ease-in-out infinite alternate;
+}
+@keyframes leaf{to{background-position:100% 50%}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative; overflow:hidden; padding:40px 0 28px}
+#embers{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
+.hero .wrap{position:relative; display:flex; flex-direction:column; gap:14px}
+.kicker{font-family:var(--font-display); font-style:italic; font-size:var(--step-1); color:var(--muted)}
+.name{display:flex; flex-direction:column; line-height:1.02}
+.name .family{font-family:var(--font-display); font-weight:400; font-size:clamp(2.4rem,9vw,3.6rem); letter-spacing:-.01em}
+.name .given{font-family:var(--font-display); font-style:italic; font-weight:500; font-size:clamp(4.2rem,19vw,7.6rem); letter-spacing:-.02em; padding:.04em .12em .14em 0; margin-top:-.06em}
+.hero-row{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:4px}
+.age{
+  font-family:var(--font-display); font-weight:700; font-size:clamp(7.5rem,40vw,15rem);
+  line-height:.78; letter-spacing:-.05em; margin-right:-.06em; order:2; margin-left:auto;
+  padding-top:.06em;
+}
+.status{order:1; flex:1 1 220px; max-width:330px; display:flex; flex-direction:column; gap:8px; padding-bottom:6px}
+.status .lead{font-size:.95rem; color:var(--muted)}
+.status .big{font-family:var(--font-display); font-size:var(--step-2); line-height:1.15; color:var(--eggshell)}
+.count{display:grid; grid-template-columns:repeat(4,1fr); gap:6px}
+.count div{border:1px solid var(--line); border-radius:10px; padding:8px 4px 6px; text-align:center; background:rgba(37,17,9,.6)}
+.count b{display:block; font-family:var(--font-display); font-weight:600; font-size:1.6rem; line-height:1.1; color:var(--gold-hi); font-variant-numeric:tabular-nums}
+.count span{font-size:.72rem; color:var(--muted)}
+
+/* ---------- Eggshell inlay divider ---------- */
+.inlay{display:block; width:100%; height:26px; margin:8px 0}
+
+/* ---------- Sections ---------- */
+section{padding:30px 0}
+section .wrap{display:flex; flex-direction:column; gap:16px}
+h2{font-family:var(--font-display); font-weight:400; font-size:var(--step-3); line-height:1.12; letter-spacing:-.01em}
+.sub{color:var(--muted); max-width:52ch}
+
+/* ---------- Cake ---------- */
+.cake-stage{position:relative; width:min(100%,340px); margin:6px 0 0 4px}
+.candles{display:flex; justify-content:center; gap:4px; position:relative; z-index:1}
+.candle{
+  position:relative; display:flex; flex-direction:column; align-items:center;
+  background:none; border:0; padding:0 2px; cursor:pointer; -webkit-tap-highlight-color:transparent;
+}
+.candle::before{
+  content:""; position:absolute; top:-26px; left:50%; width:110px; height:110px; transform:translateX(-50%);
+  background:radial-gradient(circle, rgba(255,196,90,.35), rgba(255,140,40,.08) 45%, transparent 70%);
+  transition:opacity .5s; pointer-events:none;
+}
+.flame{
+  width:16px; height:34px; border-radius:50% 50% 45% 45% / 62% 62% 38% 38%;
+  background:radial-gradient(ellipse at 50% 78%, #fffbe6 0%, #ffe08a 28%, #f6a23a 58%, rgba(232,90,30,.0) 100%);
+  transform-origin:50% 90%; animation:flicker 1.6s ease-in-out infinite;
+  transition:opacity .25s, transform .25s; filter:drop-shadow(0 0 6px rgba(255,190,90,.8));
+}
+.candle:nth-child(2) .flame{animation-delay:-.7s}
+@keyframes flicker{
+  0%,100%{transform:scale(1,1) rotate(-1.5deg)}
+  30%{transform:scale(.94,1.06) rotate(2deg)}
+  60%{transform:scale(1.04,.95) rotate(-2.5deg)}
+}
+.wick{width:2px; height:9px; background:#3b2418; border-radius:1px}
+.digit{
+  display:block; font-family:var(--font-display); font-weight:700; font-size:6.4rem; line-height:1; margin-bottom:-.11em;
+  background:repeating-linear-gradient(128deg, var(--eggshell) 0 11px, var(--vermilion) 11px 18px);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 2px 0 rgba(0,0,0,.35));
+}
+.smoke{position:absolute; top:-6px; left:50%; width:8px; height:8px; margin-left:-4px; border-radius:50%; background:rgba(239,229,207,.0); pointer-events:none}
+.candle.out .flame{opacity:0; transform:scale(.2,.1)}
+.candle.out::before{opacity:0}
+.candle.out .smoke{animation:smoke 1.8s ease-out forwards}
+@keyframes smoke{
+  0%{background:rgba(239,229,207,.5); transform:translate(0,0) scale(1); opacity:1}
+  100%{background:rgba(239,229,207,.0); transform:translate(10px,-70px) scale(5); opacity:0}
+}
+.cake{display:block; width:100%; height:auto; margin-top:calc(-13.4% - 6px); position:relative; z-index:2; pointer-events:none}
+.cake-msg{font-family:var(--font-display); font-style:italic; font-size:var(--step-1); color:var(--gold-hi); min-height:1.6em}
+.btn{
+  align-self:flex-start; border:1px solid var(--gold); background:transparent; color:var(--gold-hi);
+  border-radius:999px; padding:10px 18px; font-size:.92rem; font-weight:500; cursor:pointer;
+}
+.btn:hover{background:rgba(214,164,70,.12)}
+.btn[hidden]{display:none}
+
+/* ---------- Wishes ---------- */
+.wish-card{
+  border:1px solid var(--line); border-radius:16px; padding:18px 18px 20px;
+  background:linear-gradient(180deg, rgba(37,17,9,.9), rgba(23,10,8,.9)); min-height:210px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.wish-no{font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold)}
+.wish-text{font-family:var(--font-display); font-size:clamp(1.3rem,5.2vw,1.6rem); line-height:1.35}
+.tiles{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; max-width:360px}
+.tile{
+  aspect-ratio:1; border-radius:10px; border:1px solid var(--line); background:var(--lacquer-raised);
+  font-family:var(--font-display); font-weight:600; font-size:1.25rem; color:var(--gold); cursor:pointer;
+  font-variant-numeric:tabular-nums; transition:transform .15s, background .3s, color .3s;
+}
+.tile:hover{transform:translateY(-2px)}
+.tile.open{background:linear-gradient(135deg,#a8752a,#f4d78f 45%,#c8923a); color:var(--lacquer); border-color:transparent}
+.tile.current{box-shadow:0 0 0 2px var(--eggshell)}
+.wish-meta{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.wish-meta .opened{font-size:.9rem; color:var(--muted); font-variant-numeric:tabular-nums}
+
+/* ---------- Facts ---------- */
+.facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px}
+.fact{border-top:1px solid var(--line); padding:14px 2px 6px; display:flex; flex-direction:column; gap:4px}
+.fact .v{font-family:var(--font-display); font-size:var(--step-2); line-height:1.15; color:var(--gold-hi)}
+.fact .l{font-size:.85rem; font-weight:500; color:var(--eggshell)}
+.fact .n{font-size:.92rem; color:var(--muted)}
+.alive{
+  border:1px solid var(--line); border-radius:16px; padding:18px; background:rgba(37,17,9,.7);
+  display:flex; flex-direction:column; gap:6px; margin-top:6px;
+}
+.alive .secs{font-family:var(--font-display); font-weight:600; font-size:clamp(2.2rem,10vw,3.4rem); line-height:1.05; font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+.alive .unit{font-size:.95rem; color:var(--eggshell)}
+.alive .n{font-size:.88rem; color:var(--muted)}
+.alive-head{font-family:var(--font-display); font-style:italic; font-size:var(--step-2); line-height:1.2; color:var(--eggshell)}
+.thanks{font-family:var(--font-display); font-style:italic; font-size:var(--step-2); line-height:1.25; color:var(--gold-hi); border-top:1px solid var(--line); padding-top:14px; margin-top:8px}
+
+/* ---------- Name ---------- */
+.names{display:grid; gap:14px}
+.entry{display:grid; grid-template-columns:auto 1fr; gap:4px 16px; align-items:baseline}
+.entry .han{font-size:3rem; line-height:1; color:var(--gold); grid-row:span 2; font-family:"Noto Serif SC","Songti SC","SimSun",serif}
+.entry .w{font-family:var(--font-display); font-style:italic; font-size:var(--step-2)}
+.entry .d{color:var(--muted); max-width:46ch}
+.closing{font-family:var(--font-display); font-size:var(--step-1); line-height:1.4; max-width:40ch}
+
+/* ---------- Letter ---------- */
+.letter{
+  background:var(--eggshell); color:#2a140d; border-radius:4px; padding:28px 22px 26px;
+  box-shadow:0 18px 40px rgba(0,0,0,.45); position:relative;
+  background-image:radial-gradient(120% 80% at 0% 0%, rgba(255,255,255,.55), transparent 60%);
+}
+.letter::after{content:""; position:absolute; inset:8px; border:1px solid rgba(194,58,32,.28); border-radius:2px; pointer-events:none}
+.letter .hi{font-family:var(--font-display); font-style:italic; font-size:var(--step-2); margin-bottom:12px; color:#7e2414}
+.letter p{max-width:60ch; font-weight:400; margin-bottom:12px}
+.letter .sign{font-family:var(--font-hand); font-size:1.7rem; color:#7e2414; margin-top:10px; line-height:1.2}
+
+footer{padding:28px 0 44px; color:var(--muted); font-size:.85rem}
+footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:var(--gold); font-variant-numeric:tabular-nums}
+
+#confetti{position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:50}
+
+@media (min-width:640px){
+  .hero{padding-top:64px}
+  .names{grid-template-columns:1fr 1fr}
+  .letter{padding:40px 44px 36px}
+}
+@media (prefers-reduced-motion:reduce){
+  .gold,.flame{animation:none}
+  .candle.out .smoke{animation:none}
+  .tile{transition:none}
+}
+</style>
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<header class="hero">
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">Thứ Bảy · 14.11.2026</p>
+    <p class="kicker">Chúc mừng sinh nhật</p>
+    <h1 class="name"><span class="family">Đoàn Minh</span><span class="given gold">Phượng</span></h1>
+    <div class="hero-row">
+      <div class="age gold" aria-hidden="true">25</div>
+      <div class="status" id="status" aria-live="polite"></div>
+    </div>
+  </div>
+</header>
+
+<svg class="inlay" data-inlay="1" aria-hidden="true"></svg>
+
+<section id="thoi-nen" aria-labelledby="h-nen">
+  <div class="wrap">
+    <p class="eyebrow">Thổi nến</p>
+    <h2 id="h-nen">Ước một điều, rồi chạm vào từng ngọn nến</h2>
+    <div class="cake-stage">
+      <div class="candles">
+        <button class="candle" id="candle-0" type="button" aria-label="Thổi nến số 2"><span class="smoke"></span><span class="flame"></span><span class="wick"></span><span class="digit">2</span></button>
+        <button class="candle" id="candle-1" type="button" aria-label="Thổi nến số 5"><span class="smoke"></span><span class="flame"></span><span class="wick"></span><span class="digit">5</span></button>
+      </div>
+      <svg class="cake" viewBox="0 0 320 190" aria-hidden="true">
+        <defs>
+          <linearGradient id="gl" x1="0" x2="1">
+            <stop offset="0" stop-color="#9c6c25"/><stop offset=".3" stop-color="#f4d78f"/><stop offset=".55" stop-color="#c8923a"/><stop offset=".8" stop-color="#f8e3a8"/><stop offset="1" stop-color="#a8752a"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="160" cy="178" rx="152" ry="10" fill="#6b4416"/>
+        <ellipse cx="160" cy="175" rx="152" ry="10" fill="url(#gl)"/>
+        <rect x="30" y="100" width="260" height="75" rx="6" fill="#c23a20"/>
+        <rect x="30" y="152" width="260" height="5" fill="url(#gl)"/>
+        <g fill="#efe5cf" opacity=".9">
+          <circle cx="56" cy="140" r="2.2"/><circle cx="92" cy="140" r="2.2"/><circle cx="128" cy="140" r="2.2"/><circle cx="160" cy="140" r="2.2"/><circle cx="192" cy="140" r="2.2"/><circle cx="228" cy="140" r="2.2"/><circle cx="264" cy="140" r="2.2"/>
+        </g>
+        <path fill="#efe5cf" d="M32 98 H288 Q292 98 292 102 V108 L284 108 V114 A6 6 0 0 1 272 114 V108 L258 108 V124 A6 6 0 0 1 246 124 V108 L226 108 V111 A6 6 0 0 1 214 111 V108 L190 108 V122 A6 6 0 0 1 178 122 V108 L156 108 V114 A6 6 0 0 1 144 114 V108 L118 108 V126 A6 6 0 0 1 106 126 V108 L86 108 V112 A6 6 0 0 1 74 112 V108 L56 108 V120 A6 6 0 0 1 44 120 V108 L28 108 V102 Q28 98 32 98 Z"/>
+        <rect x="75" y="45" width="170" height="56" rx="5" fill="#2a120a"/>
+        <rect x="75" y="86" width="170" height="4" fill="url(#gl)"/>
+        <path fill="#efe5cf" d="M76 43 H244 Q248 43 248 47 V52 L241 52 V55 A5 5 0 0 1 231 55 V52 L217 52 V63 A5 5 0 0 1 207 63 V52 L187 52 V57 A5 5 0 0 1 177 57 V52 L155 52 V65 A5 5 0 0 1 145 65 V52 L125 52 V55 A5 5 0 0 1 115 55 V52 L97 52 V61 A5 5 0 0 1 87 61 V52 L72 52 V47 Q72 43 76 43 Z"/>
+      </svg>
+    </div>
+    <p class="cake-msg" id="cake-msg" aria-live="polite">Hai ngọn nến đang cháy. Ước xong thì chạm nhé.</p>
+    <button class="btn" id="relight" type="button" hidden>Thắp lại nến</button>
+  </div>
+</section>
+
+<svg class="inlay" data-inlay="2" aria-hidden="true"></svg>
+
+<section id="loi-chuc" aria-labelledby="h-chuc">
+  <div class="wrap">
+    <p class="eyebrow">25 lời chúc</p>
+    <h2 id="h-chuc">Mỗi ô là một năm. Chạm để mở một lời chúc</h2>
+    <div class="wish-card" aria-live="polite">
+      <p class="wish-no" id="wish-no"></p>
+      <p class="wish-text" id="wish-text"></p>
+    </div>
+    <div class="tiles" id="tiles" role="group" aria-label="25 ô lời chúc"></div>
+    <div class="wish-meta">
+      <button class="btn" id="random" type="button">Mở một ô bất kỳ</button>
+      <span class="opened" id="opened"></span>
+    </div>
+  </div>
+</section>
+
+<svg class="inlay" data-inlay="3" aria-hidden="true"></svg>
+
+<section id="ngay-sinh" aria-labelledby="h-sinh">
+  <div class="wrap">
+    <p class="eyebrow">14.11.2001</p>
+    <h2 id="h-sinh">Ngày Phượng chào đời</h2>
+    <div class="facts">
+      <div class="fact"><p class="v">18:30, thứ Tư</p><p class="l">14 tháng 11 năm 2001</p><p class="n">Giờ Dậu, lúc phố đã lên đèn trong những ngày chớm đông.</p></div>
+      <div class="fact"><p class="v">29 tháng Chín</p><p class="l">Âm lịch, năm Tân Tỵ</p><p class="n">Ngày cuối của tháng Chín âm. Hôm sau đã là mùng 1 tháng Mười.</p></div>
+      <div class="fact"><p class="v">Bạch Lạp Kim</p><p class="l">Mệnh của người Tân Tỵ</p><p class="n">Nghĩa là vàng trong sáp nến. Rất hợp với hai cây nến ở trên.</p></div>
+      <div class="fact"><p class="v">Bọ Cạp</p><p class="l">Cung hoàng đạo (Thiên Yết)</p><p class="n">Cung của những người sâu sắc, bền bỉ và giữ lời.</p></div>
+      <div class="fact"><p class="v">Cúc &amp; hoàng ngọc</p><p class="l">Hoa và đá của tháng 11</p><p class="n">Hai sắc vàng, cũng là màu của trang này.</p></div>
+      <div class="fact"><p class="v">Hai lần</p><p class="l">Sinh nhật trong tháng 11 năm nay</p><p class="n">Sinh nhật âm lịch rơi vào thứ Bảy 7/11, đúng một tuần trước sinh nhật dương lịch.</p></div>
+    </div>
+    <div class="alive">
+      <p class="alive-head">Một bông hoa nhỏ đã vững vàng</p>
+      <p><span class="secs gold" id="alive-secs">788.918.400</span> <span class="unit">giây</span></p>
+      <p class="unit" id="alive-break"></p>
+      <p class="n">Tính từ 18 giờ 30 ngày 14/11/2001. Đúng 18 giờ 30 ngày 14/11/2026, con số này chạm mốc 788.918.400 giây, tức tròn 9.131 ngày.</p>
+      <p class="thanks">Cảm ơn vì Phượng đã có mặt trên đời.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="inlay" data-inlay="4" aria-hidden="true"></svg>
+
+<section id="ten" aria-labelledby="h-ten">
+  <div class="wrap">
+    <p class="eyebrow">Tên của Phượng</p>
+    <h2 id="h-ten">Minh Phượng</h2>
+    <div class="names">
+      <div class="entry"><span class="han" lang="zh">明</span><span class="w">Minh</span><span class="d">Sáng, rõ ràng, sáng suốt. Thứ ánh sáng giúp người khác nhìn thấy đường.</span></div>
+      <div class="entry"><span class="han" lang="zh">鳳</span><span class="w">Phượng</span><span class="d">Chim phượng hoàng, loài chim quý trong truyền thuyết. Người ta vẫn hay nói phượng hoàng bay lên từ tro tàn.</span></div>
+    </div>
+    <p class="closing">Ghép lại thành một con phượng hoàng tỏa sáng. Tuổi 25, mong Phượng sống đúng như tên mình.</p>
+  </div>
+</section>
+
+<section id="thu" aria-labelledby="h-thu">
+  <div class="wrap">
+    <p class="eyebrow">Đọc chậm thôi</p>
+    <h2 id="h-thu">Thư gửi Phượng</h2>
+    <article class="letter">
+      <p class="hi">Phượng thân mến,</p>
+      <p>Hai mươi lăm năm trước, vào một chiều thứ Tư chớm đông, đúng lúc phố đã lên đèn, thế giới có thêm một người tên Phượng. Từ hôm ấy đến ngày 14/11 năm nay là tròn 9.131 ngày, đủ để lớn lên, đi học, rời nhà, vấp ngã rồi đứng dậy, và trở thành Phượng của hôm nay.</p>
+      <p>Người ta hay gọi 25 là một cột mốc. Cột mốc thì chẳng đòi Phượng phải có sẵn mọi câu trả lời. Nó chỉ là chỗ để dừng chân một chút, nhìn lại quãng đường đã qua và thấy rằng mình đã đi xa hơn mình tưởng.</p>
+      <p>Phượng mang tên của loài chim lửa. Mong năm nay những gì làm Phượng mệt mỏi sẽ cháy thành tro, còn những gì Phượng yêu thì cứ thế mà rực sáng.</p>
+      <p>Nhân ngày tròn hai mươi lăm xuân xanh, xin chúc Phượng thân tâm an lạc, sức khoẻ dồi dào để đi trọn những con đường xa. Chúc sự nghiệp vững như bàn thạch, công danh rộng mở như đường mây xanh, tài lộc đong đầy như suối nguồn chẳng bao giờ cạn. Và dù cánh phượng có bay xa đến đâu, bên Phượng vẫn luôn có những người thương.</p>
+      <p>Sinh nhật vui vẻ nhé!</p>
+      <p class="sign">Gửi Phượng, 14.11.2026</p>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="dates">14.11.2001 — 14.11.2026</p>
+    <p>Làm riêng cho Đoàn Minh Phượng, nhân ngày tròn 25 tuổi.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var nf = new Intl.NumberFormat("vi-VN");
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+
+  // Giờ Việt Nam (UTC+7): sinh lúc 18:30 ngày 14/11/2001
+  var BIRTH  = Date.UTC(2001, 10, 14, 11, 30, 0);
+  var START  = Date.UTC(2026, 10, 13, 17, 0, 0);  // 0:00 ngày 14/11/2026
+  var MOMENT = Date.UTC(2026, 10, 14, 11, 30, 0); // 18:30 ngày 14/11/2026
+  var END    = Date.UTC(2026, 10, 14, 17, 0, 0);  // hết ngày 14/11/2026
+  var DAY = 86400000;
+
+  var hot = window.claude && window.claude.hot;
+  var saved = (hot && hot.data) || {};
+  var state = {
+    out: Array.isArray(saved.out) ? saved.out : [false, false],
+    opened: Array.isArray(saved.opened) ? saved.opened : [25],
+    current: saved.current || 25,
+    partied: !!saved.partied
+  };
+  if (hot && hot.snapshot) { try { hot.snapshot(function(){ return state; }); } catch(e){} }
+
+  /* ---------- Hero status ---------- */
+  var statusEl = document.getElementById("status");
+  var phase = null;
+  var COUNT = '<div class="count">' +
+    '<div><b id="cd-d">00</b><span>ngày</span></div><div><b id="cd-h">00</b><span>giờ</span></div>' +
+    '<div><b id="cd-m">00</b><span>phút</span></div><div><b id="cd-s">00</b><span>giây</span></div></div>';
+  function party(){ burst(window.innerWidth/2, window.innerHeight*0.35, 160); }
+  function renderStatus(){
+    var now = Date.now();
+    var p = now < START ? "before" : now < MOMENT ? "day" : now < END ? "turned" : "after";
+    if (p !== phase) {
+      var prev = phase;
+      phase = p;
+      if (p === "before") {
+        statusEl.innerHTML = '<p class="lead">Còn</p>' + COUNT +
+          '<p class="lead">nữa là đến 18 giờ 30 ngày 14/11, khoảnh khắc Phượng tròn 25 tuổi.</p>';
+      } else if (p === "day") {
+        statusEl.innerHTML = '<p class="big">Hôm nay là sinh nhật Phượng!</p><p class="lead">Còn</p>' + COUNT +
+          '<p class="lead">nữa là đúng giờ Phượng chào đời, 25 năm về trước.</p>';
+      } else if (p === "turned") {
+        statusEl.innerHTML = '<p class="lead">Hôm nay</p><p class="big">Phượng đã tròn 25 tuổi, đúng đến từng giây. Chúc mừng sinh nhật!</p>';
+      } else {
+        statusEl.innerHTML = '<p class="lead">Tuổi 25 đã bắt đầu</p><p class="big" id="after-days"></p>';
+      }
+      if ((p === "day" || p === "turned") && !state.partied) { state.partied = true; setTimeout(party, 600); }
+      else if (p === "turned" && prev === "day") { party(); }
+    }
+    if (p === "before" || p === "day") {
+      var diff = Math.max(0, Math.floor((MOMENT - now) / 1000));
+      document.getElementById("cd-d").textContent = pad(Math.floor(diff / 86400));
+      document.getElementById("cd-h").textContent = pad(Math.floor(diff % 86400 / 3600));
+      document.getElementById("cd-m").textContent = pad(Math.floor(diff % 3600 / 60));
+      document.getElementById("cd-s").textContent = pad(diff % 60);
+    } else if (p === "after") {
+      var d = Math.floor((now - START) / DAY);
+      document.getElementById("after-days").textContent = "Phượng đã bước sang tuổi 25 được " + nf.format(d) + " ngày.";
+    }
+  }
+
+  /* ---------- Alive counter ---------- */
+  var secsEl = document.getElementById("alive-secs");
+  var breakEl = document.getElementById("alive-break");
+  function renderAlive(){
+    var s = Math.floor((Date.now() - BIRTH) / 1000);
+    secsEl.textContent = nf.format(s);
+    breakEl.textContent = "= " + nf.format(Math.floor(s / 86400)) + " ngày " + Math.floor(s % 86400 / 3600) + " giờ " + Math.floor(s % 3600 / 60) + " phút";
+  }
+  function tick(){ renderStatus(); renderAlive(); }
+  tick(); setInterval(tick, 1000);
+
+  /* ---------- Eggshell inlay dividers ---------- */
+  function seeded(seed){ return function(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+  Array.prototype.forEach.call(document.querySelectorAll("svg[data-inlay]"), function(svg){
+    var r = seeded(+svg.getAttribute("data-inlay") * 977 + 13);
+    var W = 720, H = 26, x = 0, out = "";
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
+    while (x < W) {
+      var w = 6 + r() * 16, cy = H/2 + (r() - .5) * 8, h = 4 + r() * 9;
+      var pts = [
+        [x + r()*2, cy - h/2 + r()*2], [x + w - r()*3, cy - h/2 + (r()-.5)*3],
+        [x + w + (r()-.5)*2, cy + h/2 - r()*2], [x + r()*3, cy + h/2 + (r()-.5)*2]
+      ].map(function(p){ return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" ");
+      var fade = Math.sin(Math.PI * (x + w/2) / W);
+      var op = (0.15 + 0.75 * fade * (0.6 + r()*0.4)).toFixed(2);
+      out += '<polygon points="' + pts + '" fill="#efe5cf" opacity="' + op + '"/>';
+      x += w + 1.5 + r() * 2.5;
+    }
+    svg.innerHTML = out;
+  });
+
+  /* ---------- Candles ---------- */
+  var candles = [document.getElementById("candle-0"), document.getElementById("candle-1")];
+  var msg = document.getElementById("cake-msg");
+  var relight = document.getElementById("relight");
+  function renderCandles(){
+    var left = 0;
+    candles.forEach(function(c, i){
+      c.classList.toggle("out", !!state.out[i]);
+      c.setAttribute("aria-pressed", state.out[i] ? "true" : "false");
+      if (!state.out[i]) left++;
+    });
+    msg.textContent = left === 2 ? "Hai ngọn nến đang cháy. Ước xong thì chạm nhé."
+      : left === 1 ? "Còn một ngọn nữa thôi."
+      : "Điều ước đã bay đi. Mong nó sớm thành thật.";
+    relight.hidden = left !== 0;
+  }
+  candles.forEach(function(c, i){
+    c.addEventListener("click", function(){
+      if (state.out[i]) return;
+      state.out[i] = true;
+      renderCandles();
+      if (!state.out[0] || !state.out[1]) return;
+      var b = c.closest(".cake-stage").getBoundingClientRect();
+      burst(b.left + b.width/2, b.top + b.height*0.25, 180);
+    });
+  });
+  relight.addEventListener("click", function(){ state.out = [false, false]; renderCandles(); });
+  renderCandles();
+
+  /* ---------- Wishes ---------- */
+  var themes = ["Sức khoẻ", "Sự nghiệp", "Tài chính", "Công danh"];
+  var wishes = [
+    "Chúc Phượng thân tâm an lạc, khí huyết hanh thông, mỗi sớm mai thức dậy đều tươi tắn như đoá hoa vừa hé nụ.",
+    "Chúc sự nghiệp của Phượng vững như bàn thạch, mỗi bước chân đều đặt trên nền móng do chính tài năng mình dựng nên.",
+    "Nguyện cho tài lộc tìm về bên Phượng như trăm suối đổ về biển lớn, đầy mãi mà chẳng bao giờ vơi.",
+    "Chúc Phượng thanh vân đắc lộ, đường mây xanh rộng mở, bước nào cũng thênh thang.",
+    "Mong năm tháng luôn hiền hoà với Phượng, để nụ cười mãi rạng rỡ, ánh mắt mãi trong veo như tuổi hai mươi lăm hôm nay.",
+    "Chúc Phượng gặp đúng thời, gặp đúng người, như cánh diều gặp gió lớn, cứ thế vút cao giữa trời xanh.",
+    "Chúc tiền vào như nước sông Đà, tiền ra nhỏ giọt như cà phê phin, của để dành mỗi ngày một đầy thêm.",
+    "Nguyện cho tên Phượng luôn được nhắc đến bằng sự trân trọng, tiếng thơm lan xa như hương cúc tháng Mười Một.",
+    "Mong lòng Phượng luôn thư thái như mặt hồ thu, mặc ngoài kia sóng gió, trong tâm vẫn một vùng bình yên.",
+    "Chúc mọi dự định của Phượng đều thuận buồm xuôi gió, khởi đầu hanh thông, kết thúc viên mãn.",
+    "Chúc Phượng phú quý song toàn, của cải dư dật, muốn điều chi cũng chẳng phải đắn đo.",
+    "Chúc Phượng công thành danh toại, để những nỗ lực âm thầm hôm nay hoá thành vinh quang rực rỡ ngày mai.",
+    "Chúc Phượng mạnh khoẻ dẻo dai, đủ sức đi hết những con đường xa và chạm tới những giấc mơ lớn.",
+    "Mong tài năng của Phượng như viên ngọc quý gặp được người thợ giỏi, càng mài giũa càng toả sáng.",
+    "Nguyện cho lộc tài nảy nở như cây xuân đâm chồi, mỗi đồng vốn Phượng gieo xuống đều đơm hoa kết trái.",
+    "Chúc Phượng bước lên những nấc thang mới bằng chính thực lực của mình, đứng nơi cao mà lòng vẫn khiêm nhường.",
+    "Mong bệnh tật chẳng dám ghé qua, ưu phiền chẳng thể ở lại, chỉ có niềm vui và sức sống đong đầy mỗi ngày.",
+    "Chúc Phượng như phượng hoàng tung cánh, mỗi lần vấp ngã lại bay lên cao hơn, rực rỡ hơn.",
+    "Chúc Phượng an cư lạc nghiệp, sớm có một mái ấm của riêng mình, nơi chất đầy cả của cải lẫn yêu thương.",
+    "Chúc Phượng danh thơm tiếng tốt, tài đức vẹn toàn, được người trên tin cậy, người cùng đường nể phục.",
+    "Nguyện cho tuổi xuân của Phượng dài như sông, vững như non, tinh thần luôn sáng trong như vầng trăng rằm.",
+    "Chúc Phượng tìm được con đường mình yêu, và đi trên con đường ấy bằng tất cả đam mê cùng bản lĩnh.",
+    "Chúc kim ngân tụ hội, tài lộc đầy nhà, để mọi ước mơ lớn nhỏ của Phượng đều có đủ cánh mà bay.",
+    "Chúc Phượng sáng như chữ “Minh”, bay cao như chữ “Phượng”, một đời công danh rạng rỡ tựa ánh vàng.",
+    "Và trên hết, nhân ngày tròn hai mươi lăm xuân xanh, chúc Phượng vạn sự như ý, sức khoẻ dồi dào, sự nghiệp hanh thông, công danh hiển đạt, phúc lộc đong đầy."
+  ];
+  function themeOf(n){ return n === 25 ? "Trọn vẹn" : themes[(n - 1) % 4]; }
+  var tilesEl = document.getElementById("tiles");
+  var noEl = document.getElementById("wish-no");
+  var textEl = document.getElementById("wish-text");
+  var openedEl = document.getElementById("opened");
+  var tiles = [];
+  for (var i = 1; i <= 25; i++) {
+    var t = document.createElement("button");
+    t.type = "button"; t.className = "tile"; t.textContent = i;
+    t.setAttribute("aria-label", "Lời chúc năm thứ " + i + ", " + themeOf(i));
+    (function(n){ t.addEventListener("click", function(){ openWish(n); }); })(i);
+    tilesEl.appendChild(t); tiles.push(t);
+  }
+  function openWish(n){
+    if (state.opened.indexOf(n) < 0) state.opened.push(n);
+    state.current = n; renderWishes();
+  }
+  function renderWishes(){
+    tiles.forEach(function(t, idx){
+      var n = idx + 1;
+      t.classList.toggle("open", state.opened.indexOf(n) >= 0);
+      t.classList.toggle("current", state.current === n);
+      t.setAttribute("aria-pressed", state.current === n ? "true" : "false");
+    });
+    noEl.textContent = "Năm thứ " + state.current + " · " + themeOf(state.current);
+    textEl.textContent = wishes[state.current - 1];
+    openedEl.textContent = state.opened.length >= 25 ? "Đã mở đủ 25 lời chúc" : "Đã mở " + state.opened.length + "/25";
+  }
+  document.getElementById("random").addEventListener("click", function(){
+    var pool = [];
+    for (var n = 1; n <= 25; n++) if (state.opened.indexOf(n) < 0) pool.push(n);
+    if (!pool.length) for (var m = 1; m <= 25; m++) if (m !== state.current) pool.push(m);
+    openWish(pool[Math.floor(Math.random() * pool.length)]);
+  });
+  renderWishes();
+
+  /* ---------- Embers (hero) ---------- */
+  var ec = document.getElementById("embers"), ex = ec.getContext("2d");
+  var hero = document.querySelector(".hero");
+  var embers = [], eW = 0, eH = 0, dpr = Math.min(window.devicePixelRatio || 1, 2), heroVisible = true;
+  function sizeEmbers(){
+    eW = hero.clientWidth; eH = hero.clientHeight;
+    ec.width = eW * dpr; ec.height = eH * dpr; ex.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function newEmber(anywhere){
+    return { x: eW * (0.35 + Math.random() * 0.7), y: anywhere ? Math.random() * eH : eH + 10,
+      r: 0.6 + Math.random() * 1.8, vy: 0.25 + Math.random() * 0.6, sway: Math.random() * 6.28,
+      life: 0.4 + Math.random() * 0.6 };
+  }
+  function drawEmbers(step){
+    ex.clearRect(0, 0, eW, eH);
+    embers.forEach(function(e, idx){
+      if (step) {
+        e.y -= e.vy; e.sway += 0.02; e.x += Math.sin(e.sway) * 0.3;
+        if (e.y < -10) embers[idx] = newEmber(false);
+      }
+      var a = Math.max(0, Math.min(1, e.y / eH)) * e.life * (0.7 + 0.3 * Math.sin(e.sway * 3));
+      var g = ex.createRadialGradient(e.x, e.y, 0, e.x, e.y, e.r * 5);
+      g.addColorStop(0, "rgba(255,226,150," + a + ")");
+      g.addColorStop(0.35, "rgba(240,150,60," + (a * 0.5) + ")");
+      g.addColorStop(1, "rgba(194,58,32,0)");
+      ex.fillStyle = g; ex.beginPath(); ex.arc(e.x, e.y, e.r * 5, 0, 6.283); ex.fill();
+    });
+  }
+  sizeEmbers();
+  for (var k = 0; k < 55; k++) embers.push(newEmber(true));
+  window.addEventListener("resize", function(){ sizeEmbers(); sizeConfetti(); if (reduce) drawEmbers(false); });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(en){ heroVisible = en[0].isIntersecting; }).observe(hero);
+  }
+  if (reduce) { drawEmbers(false); }
+  else { (function loop(){ if (heroVisible) drawEmbers(true); requestAnimationFrame(loop); })(); }
+
+  /* ---------- Gold-leaf confetti ---------- */
+  var cc = document.getElementById("confetti"), cx = cc.getContext("2d");
+  var flakes = [], running = false;
+  var colors = ["#f4d78f", "#d6a446", "#fff1c2", "#c23a20", "#efe5cf", "#b8862f"];
+  function sizeConfetti(){ cc.width = innerWidth * dpr; cc.height = innerHeight * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  sizeConfetti();
+  function burst(x, y, n){
+    if (reduce) n = Math.round(n / 4);
+    for (var i = 0; i < n; i++) {
+      var ang = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 1.3, sp = 4 + Math.random() * 9;
+      var s = 4 + Math.random() * 9;
+      flakes.push({ x: x, y: y, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp, s: s,
+        a: Math.random() * 6.28, va: (Math.random() - .5) * 0.3, f: Math.random() * 6.28, vf: 0.05 + Math.random() * 0.12,
+        c: colors[Math.floor(Math.random() * colors.length)],
+        shape: [Math.random()*.3, Math.random()*.3, .7+Math.random()*.3, Math.random()*.4, .6+Math.random()*.4, .7+Math.random()*.3, Math.random()*.3, .6+Math.random()*.4],
+        t: 0 });
+    }
+    if (!running) { running = true; requestAnimationFrame(stepConfetti); }
+  }
+  function stepConfetti(){
+    cx.clearRect(0, 0, innerWidth, innerHeight);
+    flakes = flakes.filter(function(p){ return p.t < 260 && p.y < innerHeight + 40; });
+    flakes.forEach(function(p){
+      p.t++; p.vy += 0.16; p.vx *= 0.985; p.vy *= 0.985;
+      p.x += p.vx + Math.sin(p.f) * 0.6; p.y += p.vy; p.a += p.va; p.f += p.vf;
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.a); cx.scale(1, Math.cos(p.f));
+      cx.globalAlpha = Math.min(1, (260 - p.t) / 60);
+      cx.fillStyle = p.c; cx.beginPath();
+      var s = p.s, q = p.shape;
+      cx.moveTo((q[0]-.5)*s, (q[1]-.5)*s); cx.lineTo((q[2]-.5)*s, (q[3]-.5)*s);
+      cx.lineTo((q[4]-.5)*s, (q[5]-.5)*s); cx.lineTo((q[6]-.5)*s, (q[7]-.5)*s);
+      cx.closePath(); cx.fill(); cx.restore();
+    });
+    if (flakes.length) requestAnimationFrame(stepConfetti);
+    else { running = false; cx.clearRect(0, 0, innerWidth, innerHeight); }
+  }
+  window.__burst = burst;
+})();
+</script>
+</body>
+</html>
