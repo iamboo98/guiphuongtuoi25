@@ -18,7 +18,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23170a08'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='36' fill='%23e2b65c'%3E25%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Charm:wght@400;700&family=Noto+Serif+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Charm:wght@400;700&family=Dancing+Script:wght@500;600;700&family=Noto+Serif+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 /* Sơn mài: nền then đỏ thẫm, chữ vàng lá, khảm vỏ trứng. Một cột đọc dọc, lệch trái, số 25 tràn mép phải. */
 :root{
@@ -33,6 +33,7 @@
   --font-display:"Noto Serif Display","Cormorant Garamond",Georgia,"Times New Roman",serif;
   --font-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-hand:"Charm","Noto Serif Display",Georgia,cursive;
+  --font-letter:"Dancing Script","Charm",cursive;
   --step-0:1rem; --step-1:1.25rem; --step-2:1.6rem; --step-3:2.2rem; --step-4:3.2rem;
   color-scheme:dark;
 }
@@ -203,11 +204,9 @@ h2{font-family:var(--font-display); font-weight:400; font-size:var(--step-3); li
   background-image:radial-gradient(120% 80% at 0% 0%, rgba(255,255,255,.55), transparent 60%);
 }
 .letter::after{content:""; position:absolute; inset:8px; border:1px solid rgba(194,58,32,.28); border-radius:2px; pointer-events:none}
-.letter .hi{font-family:var(--font-display); font-style:italic; font-size:var(--step-2); margin-bottom:12px; color:#7e2414}
-.letter p{max-width:60ch; font-weight:400; margin-bottom:12px}
-.letter .perks{margin:0 0 14px; padding-left:1.25em; max-width:60ch; display:flex; flex-direction:column; gap:8px; font-weight:400}
-.letter .perks li::marker{color:#c23a20}
-.letter .sign{font-family:var(--font-hand); font-size:1.7rem; color:#7e2414; margin-top:10px; line-height:1.2}
+.letter .hi{font-family:var(--font-letter); font-weight:700; font-size:2.1rem; line-height:1.2; margin-bottom:14px; color:#7e2414}
+.letter p{max-width:60ch; font-family:var(--font-letter); font-weight:500; font-size:1.5rem; line-height:1.45; color:#3a1a10; margin-bottom:8px}
+.letter .sign{font-family:var(--font-letter); font-weight:700; font-size:1.9rem; color:#7e2414; margin-top:18px; line-height:1.25}
 
 /* ---------- Album ---------- */
 .album{display:grid; grid-template-columns:1fr 1fr; gap:10px; align-items:start}
@@ -373,15 +372,11 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
     <p class="eyebrow">Đọc chậm thôi</p>
     <h2 id="h-thu">Thư gửi Phượng</h2>
     <article class="letter">
-      <p class="hi">Phượng ơi,</p>
-      <p>Chúc mừng Phượng chính thức lên level 25! Để ăn mừng, vanboo xin gửi tặng gói “Tuổi 25 VIP”, gồm:</p>
-      <ul class="perks">
-        <li>Tươi vui cả năm, cười nhiều tới mức người lạ cũng phải hỏi “có chuyện gì vui thế?”.</li>
-        <li>Tiền về tài khoản đều như shipper giao hàng, điện thoại kêu “ting ting” suốt ngày.</li>
-        <li>Nước mắt chỉ được rơi khi cười quá đà hoặc khi xem phim Hàn.</li>
-        <li>Hỗ trợ 24/7 từ vanboo: khuân hàng, nghe than, đi ăn giải sầu, và sẵn sàng nói xấu hộ bất cứ ai làm Phượng buồn.</li>
-      </ul>
-      <p>Gói có hiệu lực từ 18 giờ 30 ngày 14/11/2026. Không giới hạn thời gian, không nhận đổi trả.</p>
+      <p class="hi">Minh Phượng,</p>
+      <p>Tuổi mới roài. Chúc Phượng tuổi mới thật nhiều niềm vui, công việc thuận lợi.</p>
+      <p>Tiền lúc nào cũng đầy túi.</p>
+      <p>Da dẻ đẹp hơn và sẽ không gặp phải điều gì khiến mình phải rơi nước mắt nha.</p>
+      <p>Cố lên shop nhớ, có khó khăn gì vẫn có mọi người ủng hộ.</p>
       <p class="sign">Gửi Phượng, tuổi 25 thật rực rỡ!</p>
     </article>
   </div>
