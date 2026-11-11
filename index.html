@@ -205,6 +205,8 @@ h2{font-family:var(--font-display); font-weight:400; font-size:var(--step-3); li
 .letter::after{content:""; position:absolute; inset:8px; border:1px solid rgba(194,58,32,.28); border-radius:2px; pointer-events:none}
 .letter .hi{font-family:var(--font-display); font-style:italic; font-size:var(--step-2); margin-bottom:12px; color:#7e2414}
 .letter p{max-width:60ch; font-weight:400; margin-bottom:12px}
+.letter .perks{margin:0 0 14px; padding-left:1.25em; max-width:60ch; display:flex; flex-direction:column; gap:8px; font-weight:400}
+.letter .perks li::marker{color:#c23a20}
 .letter .sign{font-family:var(--font-hand); font-size:1.7rem; color:#7e2414; margin-top:10px; line-height:1.2}
 
 /* ---------- Album ---------- */
@@ -372,9 +374,14 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
     <h2 id="h-thu">Thư gửi Phượng</h2>
     <article class="letter">
       <p class="hi">Phượng ơi,</p>
-      <p>Chúc mừng sinh nhật! 25 tuổi rồi đấy, nghe thì lớn mà nhìn vẫn như học sinh cấp ba.</p>
-      <p>Tuổi mới chúc Phượng lúc nào cũng tươi vui, tiền vào thật nhiều, và ít phải rơi nước mắt thôi nhé.</p>
-      <p>Còn chuyện gì khó thì đã có vanboo hỗ trợ. Từ khuân hàng, nghe than đến rủ đi ăn giải sầu, cứ gọi là có mặt.</p>
+      <p>Chúc mừng Phượng chính thức lên level 25! Để ăn mừng, vanboo xin gửi tặng gói “Tuổi 25 VIP”, gồm:</p>
+      <ul class="perks">
+        <li>Tươi vui cả năm, cười nhiều tới mức người lạ cũng phải hỏi “có chuyện gì vui thế?”.</li>
+        <li>Tiền về tài khoản đều như shipper giao hàng, điện thoại kêu “ting ting” suốt ngày.</li>
+        <li>Nước mắt chỉ được rơi khi cười quá đà hoặc khi xem phim Hàn.</li>
+        <li>Hỗ trợ 24/7 từ vanboo: khuân hàng, nghe than, đi ăn giải sầu, và sẵn sàng nói xấu hộ bất cứ ai làm Phượng buồn.</li>
+      </ul>
+      <p>Gói có hiệu lực từ 18 giờ 30 ngày 14/11/2026. Không giới hạn thời gian, không nhận đổi trả.</p>
       <p class="sign">Gửi Phượng, tuổi 25 thật rực rỡ!</p>
     </article>
   </div>
