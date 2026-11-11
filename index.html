@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://iamboo98.github.io/guiphuongtuoi25/">
 <meta property="og:title" content="Gửi Phượng tuổi 25">
 <meta property="og:description" content="Mở thiệp, thổi nến và nhận 25 lời chúc dành riêng cho Phượng.">
-<meta property="og:image" content="https://iamboo98.github.io/guiphuongtuoi25/og.jpg">
+<meta property="og:image" content="https://iamboo98.github.io/guiphuongtuoi25/og-25.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
@@ -73,13 +73,21 @@ button{font:inherit; color:inherit}
 .name{display:flex; flex-direction:column; line-height:1.02}
 .name .family{font-family:var(--font-display); font-weight:400; font-size:clamp(2.4rem,9vw,3.6rem); letter-spacing:-.01em}
 .name .given{font-family:var(--font-display); font-style:italic; font-weight:500; font-size:clamp(4.2rem,19vw,7.6rem); letter-spacing:-.02em; padding:.04em .12em .14em 0; margin-top:-.06em}
-.hero-row{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:4px}
-.age{
-  font-family:var(--font-display); font-weight:700; font-size:clamp(7.5rem,40vw,15rem);
-  line-height:.78; letter-spacing:-.05em; margin-right:-.06em; order:2; margin-left:auto;
-  padding-top:.06em;
+.portrait{position:relative; width:min(74%,330px); margin:10px 0 18px}
+.arch{
+  aspect-ratio:4/5; overflow:hidden; border:1px solid var(--gold);
+  border-radius:50% 50% 14px 14px / 40% 40% 14px 14px;
+  box-shadow:0 0 0 7px var(--lacquer), 0 0 0 8px var(--line), 0 24px 50px rgba(0,0,0,.5);
+  background:var(--lacquer-raised);
 }
-.status{order:1; flex:1 1 220px; max-width:330px; display:flex; flex-direction:column; gap:8px; padding-bottom:6px}
+.arch img{width:100%; height:100%; display:block; object-fit:cover; object-position:48% 45%}
+.age{
+  position:absolute; right:-34%; bottom:-8%;
+  font-family:var(--font-display); font-weight:700; font-size:clamp(7rem,36vw,12rem);
+  line-height:.78; letter-spacing:-.05em; padding-top:.06em;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,.55));
+}
+.status{max-width:420px; display:flex; flex-direction:column; gap:8px}
 .status .lead{font-size:.95rem; color:var(--muted)}
 .status .big{font-family:var(--font-display); font-size:var(--step-2); line-height:1.15; color:var(--eggshell)}
 .count{display:grid; grid-template-columns:repeat(4,1fr); gap:6px}
@@ -199,6 +207,32 @@ h2{font-family:var(--font-display); font-weight:400; font-size:var(--step-3); li
 .letter p{max-width:60ch; font-weight:400; margin-bottom:12px}
 .letter .sign{font-family:var(--font-hand); font-size:1.7rem; color:#7e2414; margin-top:10px; line-height:1.2}
 
+/* ---------- Gallery ---------- */
+.gallery{display:grid; grid-template-columns:1fr 1fr; gap:14px 12px}
+.ph{margin:0; display:flex; flex-direction:column; gap:8px}
+.ph.wide{grid-column:1/-1}
+.ph img{width:100%; height:auto; display:block; aspect-ratio:3/4; object-fit:cover; border-radius:6px; border:1px solid var(--line); background:var(--lacquer-raised)}
+.ph.landscape img{aspect-ratio:887/517}
+.ph.tall img{aspect-ratio:4/5; object-position:50% 42%}
+.ph figcaption, .reel figcaption{font-family:var(--font-display); font-style:italic; font-size:1rem; line-height:1.35; color:var(--muted)}
+
+/* ---------- Reels ---------- */
+.reels{
+  display:grid; grid-auto-flow:column; grid-auto-columns:min(66%,250px); gap:12px;
+  overflow-x:auto; scroll-snap-type:x mandatory; margin:0 -20px; padding:0 20px 8px; scroll-padding-inline:20px;
+  scrollbar-width:none;
+}
+.reels::-webkit-scrollbar{display:none}
+.reel{margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:8px}
+.frame{position:relative; aspect-ratio:9/16; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#000; cursor:pointer}
+.frame video{width:100%; height:100%; display:block; object-fit:cover}
+.snd{
+  position:absolute; left:10px; bottom:10px; border:1px solid rgba(244,215,143,.6); background:rgba(23,10,8,.72);
+  color:var(--gold-hi); border-radius:999px; padding:6px 12px; font-size:.8rem; font-weight:500; cursor:pointer;
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+}
+.frame.on .snd{background:var(--gold); color:var(--lacquer); border-color:transparent}
+
 footer{padding:28px 0 44px; color:var(--muted); font-size:.85rem}
 footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:var(--gold); font-variant-numeric:tabular-nums}
 
@@ -206,6 +240,7 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
 
 @media (min-width:640px){
   .hero{padding-top:64px}
+  .reels{grid-auto-flow:row; grid-template-columns:repeat(3,1fr); overflow:visible; margin:0; padding:0}
   .names{grid-template-columns:1fr 1fr}
   .letter{padding:40px 44px 36px}
 }
@@ -225,10 +260,11 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
     <p class="eyebrow">Thứ Bảy · 14.11.2026</p>
     <p class="kicker">Chúc mừng sinh nhật</p>
     <h1 class="name"><span class="family">Đoàn Minh</span><span class="given gold">Phượng</span></h1>
-    <div class="hero-row">
+    <figure class="portrait">
+      <div class="arch"><img src="img/chan-dung.jpg" alt="Chân dung Phượng trong chiếc váy đen" width="1200" height="1200" fetchpriority="high"></div>
       <div class="age gold" aria-hidden="true">25</div>
-      <div class="status" id="status" aria-live="polite"></div>
-    </div>
+    </figure>
+    <div class="status" id="status" aria-live="polite"></div>
   </div>
 </header>
 
@@ -281,6 +317,34 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
     <div class="wish-meta">
       <button class="btn" id="random" type="button">Mở một ô bất kỳ</button>
       <span class="opened" id="opened"></span>
+    </div>
+  </div>
+</section>
+
+<svg class="inlay" data-inlay="5" aria-hidden="true"></svg>
+
+<section id="khoanh-khac" aria-labelledby="h-anh">
+  <div class="wrap">
+    <p class="eyebrow">Khoảnh khắc</p>
+    <h2 id="h-anh">Phượng qua từng khung hình</h2>
+    <div class="gallery">
+      <figure class="ph wide landscape"><img src="img/ngay-ay.jpg" alt="Phượng đeo kính tròn, mặc áo len hoạ tiết, tay cầm hộp sữa" width="887" height="517" loading="lazy"><figcaption>Ngày ấy: tóc ngang vai, kính tròn và một hộp sữa tươi trên tay.</figcaption></figure>
+      <figure class="ph"><img src="img/dong-hang.jpg" alt="Phượng ngồi giữa kho hàng, mặc áo phông chữ time for sleep" width="1200" height="1600" loading="lazy"><figcaption>Những ngày đóng hàng: áo bảo đi ngủ, tay vẫn gói đơn.</figcaption></figure>
+      <figure class="ph"><img src="img/cung-duong.jpg" alt="Phượng đội mũ bảo hiểm, chụp ảnh trên phố" width="1200" height="1600" loading="lazy"><figcaption>Trên những cung đường quen, nụ cười chưa bao giờ tắt.</figcaption></figure>
+      <figure class="ph wide tall"><img src="img/hom-nay.jpg" alt="Phượng cười, giơ tay chữ V" width="1100" height="1955" loading="lazy"><figcaption>Và Phượng của hôm nay, rạng rỡ bước vào tuổi 25.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="thuoc-phim" aria-labelledby="h-phim">
+  <div class="wrap">
+    <p class="eyebrow">Thước phim nhỏ</p>
+    <h2 id="h-phim">Vài giây đáng yêu của Phượng</h2>
+    <p class="sub">Chạm vào video để bật hoặc tắt tiếng.</p>
+    <div class="reels">
+      <figure class="reel"><div class="frame"><video src="video/phuong-1.mp4" poster="video/phuong-1.jpg" muted loop playsinline preload="metadata" aria-label="Video Phượng đội mũ hồng"></video><button class="snd" type="button">Bật tiếng</button></div><figcaption>Mũ hồng, kính to và một chút tinh nghịch.</figcaption></figure>
+      <figure class="reel"><div class="frame"><video src="video/phuong-2.mp4" poster="video/phuong-2.jpg" muted loop playsinline preload="metadata" aria-label="Video Phượng mặc áo sơ mi trắng"></video><button class="snd" type="button">Bật tiếng</button></div><figcaption>Một buổi chiều dịu dàng như câu hát.</figcaption></figure>
+      <figure class="reel"><div class="frame"><video src="video/phuong-3.mp4" poster="video/phuong-3.jpg" muted loop playsinline preload="metadata" aria-label="Video Phượng đeo kính đỏ"></video><button class="snd" type="button">Bật tiếng</button></div><figcaption>Kính đỏ, kẹp tóc xinh xinh.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -534,6 +598,35 @@ footer .dates{font-family:var(--font-display); font-size:var(--step-1); color:va
     openWish(pool[Math.floor(Math.random() * pool.length)]);
   });
   renderWishes();
+
+  /* ---------- Reels ---------- */
+  var frames = Array.prototype.slice.call(document.querySelectorAll(".frame"));
+  function setSound(fr, on){
+    var v = fr.querySelector("video"), b = fr.querySelector(".snd");
+    v.muted = !on; fr.classList.toggle("on", on);
+    b.textContent = on ? "Tắt tiếng" : "Bật tiếng";
+  }
+  frames.forEach(function(fr){
+    var v = fr.querySelector("video");
+    if (reduce) v.controls = true;
+    fr.addEventListener("click", function(e){
+      if (reduce && e.target === v) return;
+      var turnOn = v.muted;
+      frames.forEach(function(o){ if (o !== fr) setSound(o, false); });
+      setSound(fr, turnOn);
+      if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+    });
+  });
+  if (!reduce && "IntersectionObserver" in window) {
+    var vio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var v = en.target;
+        if (en.isIntersecting && en.intersectionRatio >= 0.5) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        else v.pause();
+      });
+    }, { threshold: [0, 0.5, 1] });
+    frames.forEach(function(fr){ vio.observe(fr.querySelector("video")); });
+  }
 
   /* ---------- Embers (hero) ---------- */
   var ec = document.getElementById("embers"), ex = ec.getContext("2d");
