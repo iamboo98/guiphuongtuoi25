@@ -535,26 +535,21 @@ section h2::after{content:""; position:absolute; left:0; bottom:0; width:64px; h
   }
   function renderStatus(){
     var now = Date.now();
-    var p = now < START ? "before" : now < MOMENT ? "day" : now < END ? "turned" : "after";
+    var p = now < START ? "before" : now < END ? "today" : "after";
     if (p !== phase) {
-      var prev = phase;
       phase = p;
       if (p === "before") {
         statusEl.innerHTML = '<p class="lead">Còn</p>' + COUNT +
-          '<p class="lead">nữa là đến 18 giờ 30 ngày 14/11, khoảnh khắc Phượng tròn 25 tuổi.</p>';
-      } else if (p === "day") {
-        statusEl.innerHTML = '<p class="big">Hôm nay là sinh nhật Phượng!</p><p class="lead">Còn</p>' + COUNT +
-          '<p class="lead">nữa là đúng giờ Phượng chào đời, 25 năm về trước.</p>';
-      } else if (p === "turned") {
-        statusEl.innerHTML = '<p class="lead">Hôm nay</p><p class="big">Phượng đã tròn 25 tuổi, đúng đến từng giây. Chúc mừng sinh nhật!</p>';
+          '<p class="lead">nữa là đến sinh nhật 25 của Phượng, ngày 14/11.</p>';
+      } else if (p === "today") {
+        statusEl.innerHTML = '<p class="lead">Hôm nay</p><p class="big">Phượng tròn 25 tuổi. Chúc mừng sinh nhật!</p>';
+        if (!state.partied) { state.partied = true; setTimeout(party, 600); }
       } else {
         statusEl.innerHTML = '<p class="lead">Tuổi 25 đã bắt đầu</p><p class="big" id="after-days"></p>';
       }
-      if ((p === "day" || p === "turned") && !state.partied) { state.partied = true; setTimeout(party, 600); }
-      else if (p === "turned" && prev === "day") { party(); }
     }
-    if (p === "before" || p === "day") {
-      var diff = Math.max(0, Math.floor((MOMENT - now) / 1000));
+    if (p === "before") {
+      var diff = Math.max(0, Math.floor((START - now) / 1000));
       setNum("cd-d", pad(Math.floor(diff / 86400)));
       setNum("cd-h", pad(Math.floor(diff % 86400 / 3600)));
       setNum("cd-m", pad(Math.floor(diff % 3600 / 60)));
