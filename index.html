@@ -191,12 +191,24 @@ h2{font-family:var(--font-display); font-weight:400; font-size:var(--step-3); li
 .thanks{font-family:var(--font-display); font-style:italic; font-size:var(--step-2); line-height:1.25; color:var(--gold-hi); border-top:1px solid var(--line); padding-top:14px; margin-top:8px}
 
 /* ---------- Name ---------- */
-.names{display:grid; gap:14px}
-.entry{display:grid; grid-template-columns:auto 1fr; gap:4px 16px; align-items:baseline}
-.entry .han{font-size:3rem; line-height:1; color:var(--gold); grid-row:span 2; font-family:"Noto Serif SC","Songti SC","SimSun",serif}
-.entry .w{font-family:var(--font-display); font-style:italic; font-size:var(--step-2)}
-.entry .d{color:var(--muted); max-width:46ch}
+.names{display:flex; flex-direction:column; gap:24px}
+.entry{display:grid; grid-template-columns:68px 1fr; gap:16px; align-items:start}
+.entry .han{width:68px; height:68px; display:grid; place-items:center; border:1px solid var(--gold); border-radius:12px;
+  font-family:"Noto Serif SC","Songti SC","SimSun",serif; font-size:2.5rem; line-height:1; color:var(--gold-hi);
+  background:radial-gradient(circle at 30% 25%, rgba(244,215,143,.2), transparent 70%), var(--lacquer-raised);
+  box-shadow:0 0 0 4px var(--lacquer), 0 0 0 5px var(--line)}
+.entry .body{display:flex; flex-direction:column; gap:5px}
+.entry .role, .name-card .k{font-size:.72rem; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--gold)}
+.entry .w{font-family:var(--font-display); font-style:italic; font-size:var(--step-2); line-height:1.1}
+.entry .d{color:var(--eggshell); font-size:.98rem; max-width:52ch}
+.entry .f{color:var(--muted); font-size:.92rem; max-width:52ch}
+.name-cards{display:grid; grid-template-columns:1fr; gap:10px; margin-top:6px}
+.name-card{border:1px solid var(--line); border-radius:14px; padding:14px 16px; background:rgba(35,26,16,.7); display:flex; flex-direction:column; gap:4px}
+.name-card .v{font-family:var(--font-display); font-size:var(--step-1); line-height:1.25; color:var(--gold-hi)}
+.name-card .n{font-size:.92rem; color:var(--muted)}
 .closing{font-family:var(--font-display); font-size:var(--step-1); line-height:1.4; max-width:40ch}
+.js .entry.rv .han{transform:scale(1.4); opacity:0; transition:transform .7s cubic-bezier(.3,1.5,.5,1) calc(var(--d,0s) + .2s), opacity .5s ease calc(var(--d,0s) + .2s)}
+.js .entry.rv.in .han{transform:none; opacity:1}
 
 /* ---------- Letter ---------- */
 .letter{
@@ -291,7 +303,7 @@ section h2::after{content:""; position:absolute; left:0; bottom:0; width:64px; h
 
 @media (min-width:640px){
   .hero{padding-top:64px}
-  .names{grid-template-columns:1fr 1fr}
+  .name-cards{grid-template-columns:repeat(3,1fr)}
   .letter{padding:40px 44px 36px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -424,12 +436,42 @@ section h2::after{content:""; position:absolute; left:0; bottom:0; width:64px; h
 <section id="ten" aria-labelledby="h-ten">
   <div class="wrap">
     <p class="eyebrow">Tên của Phượng</p>
-    <h2 id="h-ten">Minh Phượng</h2>
+    <h2 id="h-ten">Đoàn Minh Phượng</h2>
     <div class="names">
-      <div class="entry"><span class="han" lang="zh">明</span><span class="w">Minh</span><span class="d">Sáng, sáng suốt.</span></div>
-      <div class="entry"><span class="han" lang="zh">鳳</span><span class="w">Phượng</span><span class="d">Chim phượng hoàng, loài chim quý.</span></div>
+      <div class="entry">
+        <span class="han" lang="zh">段</span>
+        <div class="body">
+          <p class="role">Họ</p>
+          <p class="w">Đoàn</p>
+          <p class="d">Một dòng họ lâu đời của người Việt.</p>
+          <p class="f">Họ Đoàn từng có nữ sĩ tài danh Đoàn Thị Điểm ở thế kỷ XVIII.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="han" lang="zh">明</span>
+        <div class="body">
+          <p class="role">Tên đệm</p>
+          <p class="w">Minh</p>
+          <p class="d">Sáng, thông minh, minh mẫn, rõ ràng.</p>
+          <p class="f">Chữ 明 ghép từ 日 mặt trời và 月 mặt trăng, nghĩa là sáng cả ngày lẫn đêm.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="han" lang="zh">鳳</span>
+        <div class="body">
+          <p class="role">Tên</p>
+          <p class="w">Phượng</p>
+          <p class="d">Phượng hoàng, một trong tứ linh Long, Lân, Quy, Phụng. Biểu tượng của vẻ đẹp, sự cao quý và điềm lành.</p>
+          <p class="f">Người xưa nói phượng hoàng chỉ đậu trên cây ngô đồng, ý chỉ người biết mình xứng đáng với điều tốt nhất.</p>
+        </div>
+      </div>
     </div>
-    <p class="closing">Một con phượng hoàng toả sáng. Mong Phượng luôn sống đúng như tên mình.</p>
+    <div class="name-cards">
+      <div class="name-card"><p class="k">Ghép lại</p><p class="v">Phượng hoàng rực sáng</p><p class="n">Đẹp, giỏi, sáng suốt và có khí chất riêng.</p></div>
+      <div class="name-card"><p class="k">Âm điệu</p><p class="v">Bằng, bằng, trắc</p><p class="n">“Đoàn Minh” mở đầu êm, “Phượng” khép lại chắc. Đọc lên vừa mềm vừa có lực.</p></div>
+      <div class="name-card"><p class="k">Hợp mệnh</p><p class="v">Vàng gặp ánh sáng</p><p class="n">Bạch Lạp Kim là vàng tôi trong ánh nến, còn Minh là ánh sáng. Vàng gặp ánh sáng thì càng lấp lánh.</p></div>
+    </div>
+    <p class="closing">Tuổi 25, mong Phượng sống đúng như tên mình: sáng suốt, kiêu hãnh và luôn toả sáng.</p>
   </div>
 </section>
 
@@ -846,6 +888,7 @@ section h2::after{content:""; position:absolute; left:0; bottom:0; width:64px; h
     mark(".cake-stage, .cake-msg, .wish-card, .wish-meta, .alive, .closing, .letter, footer .dates", "rv");
     mark(".fact", "rv", 0.08);
     mark(".entry", "rv", 0.15);
+    mark(".name-card", "rv", 0.12);
     mark(".album .col:first-child .m", "rvp", 0.12, true);
     mark(".album .col:last-child .m", "rvp", 0.12, true);
     Array.prototype.forEach.call(document.querySelectorAll(".album .col:last-child .m"), function(el, i){ el.style.setProperty("--d", (0.06 + i * 0.12) + "s"); });
